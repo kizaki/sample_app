@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_app/next_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,12 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'パスワードリスト',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'パスワードリスト'),
     );
   }
 }
@@ -50,7 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (BuildContext context, int i) {
           return Column(
             children: [
-              ListTile(
+              ListTile( // ListTileウィジェット
+                onTap: (){
+                  // 画面遷移の処理を記述
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => NextPage(titleList[i])));
+                },
                 leading: Icon(Icons.vpn_key), // 左側に表示
                 title: Text(titleList[i]),
               ),
@@ -61,7 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: (){
+          // ボタンが押された時の処理を記述
+          titleList.add('Google');
+          //print(titleList);
+          setState((){
+
+          });
+        }, // 関数に置き換える
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
