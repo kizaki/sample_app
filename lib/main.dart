@@ -35,26 +35,30 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
+  // widget: 頭が大文字だったらWidget
+  // property: 頭が小文字だったらproperty
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("パスワードポスト"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [ // childrenの中に子要素を入れる
+          ListTile(
+            leading: Icon(Icons.vpn_key), // 左側に何かを表示したい場合使う
+           title: Text('Amazon'),
+          ),
+          ListTile(
+            leading: Icon(Icons.vpn_key),
+            title: Text('楽天'),
+          ),
+          ListTile(
+            leading: Icon(Icons.vpn_key),
+            title: Text('Yahoo'),
+          ),
+        ],
+
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
