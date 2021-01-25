@@ -29,12 +29,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  List<String> titleList = ['Amazon', '楽天', 'Yahoo'];
 
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
   }
+
   // widget: 頭が大文字だったらWidget
   // property: 頭が小文字だったらproperty
   @override
@@ -43,22 +45,20 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("パスワードポスト"),
       ),
-      body: ListView(
-        children: [ // childrenの中に子要素を入れる
-          ListTile(
-            leading: Icon(Icons.vpn_key), // 左側に何かを表示したい場合使う
-           title: Text('Amazon'),
-          ),
-          ListTile(
-            leading: Icon(Icons.vpn_key),
-            title: Text('楽天'),
-          ),
-          ListTile(
-            leading: Icon(Icons.vpn_key),
-            title: Text('Yahoo'),
-          ),
-        ],
-
+      body: ListView.builder(
+        itemCount: titleList.length, // 要素数を取得
+        itemBuilder: (BuildContext context, int i) {
+          return Column(
+            children: [
+              ListTile(
+                leading: Icon(Icons.vpn_key), // 左側に表示
+                title: Text(titleList[i]),
+              ),
+              // 線を表示
+              Divider(thickness: 5),
+            ],
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
