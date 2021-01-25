@@ -1,16 +1,17 @@
-# sample_app
+# パスワードリストアプリ
 
-A new Flutter application.
+面倒なパスワード管理を一元管理できるアプリ
 
-## Getting Started
+## 作業内容
 
-This project is a starting point for a Flutter application.
+Windows開発環境とMac開発環境をアップデート
+実機での動作確認はAQUOS(SH-02M)を使用
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+// todo ホーム画面のタイトル変更
+// todo リストを表示
+// todo リスト間に区切り線を表示
+// todo リスト表示を動的に
+// todo フローティングアクションボタンをタップ時に、リストを一つ追加表示
+// todo 新しい画面をを作成し、リストをタップした時に遷移
+// todo 新しい画面のレイアウト作成
+// todo 新しい画面にリストからデータを引き継ぐ
